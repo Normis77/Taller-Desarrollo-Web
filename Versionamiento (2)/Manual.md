@@ -18,13 +18,14 @@
 
 Antes de iniciar, es fundamental comprender los conceptos básicos del versionamiento:
 
-* **Repositorio (Repo):** Es el "contenedor" o carpeta del proyecto donde Git guarda todo el historial de cambios.
-* **Commit:** Es una "fotografía" de tus archivos en un momento exacto. Cada commit tiene un identificador único y un mensaje descriptivo.
-* **Rama (Branch):** Es una línea de tiempo independiente. La rama principal suele llamarse `main`.
-* **Remote (Remoto):** Es la versión de tu proyecto que vive en la nube (GitHub).
-* **Clone:** Crear una copia local exacta de un repositorio que ya existe en GitHub.
-* **Push:** Enviar tus cambios locales al repositorio en la nube.
-* **Pull:** Traer los cambios más recientes de la nube a tu computadora.
+* **Repositorio (Repo):** Contenedor digital donde se almacena el proyecto y todo su historial de cambios.
+* **Commit:** "Fotografía" del estado de tus archivos en un momento dado. Incluye un mensaje descriptivo y un ID único.
+* **Rama (Branch):** Línea de tiempo independiente de desarrollo. La principal se denomina `main`.
+* **Remote (Remoto):** Versión del proyecto alojada en un servidor en la nube (GitHub).
+* **Clone:** Descargar una copia exacta de un repositorio remoto a tu computadora local.
+* **Push:** Acción de subir tus commits locales al repositorio remoto.
+* **Pull:** Acción de descargar los últimos cambios del remoto para actualizar tu copia local.
+* **.gitignore:** Archivo especial donde se enlistan carpetas o archivos que Git **no** debe rastrear (ej. contraseñas o librerías pesadas).
 
 
 ---
@@ -39,7 +40,7 @@ Antes de iniciar, es fundamental comprender los conceptos básicos del versionam
 
 ---
 
-## Utilizando la Versión De Consola
+## Utilizando la Versión De Consola (Terminal)
 
 ###  Configuración Inicial 
 1. Al ser la primerza vez que utilizamos git necesitamos configurar el usuario (solo la primera vez). Utilizamos los comandos:
@@ -165,11 +166,12 @@ Siempre en la carpeta donde queremos tener el proyecto utilizamos el comando:
 git clone "link_del_repositorio" 
 ```
 
-## Utilizando la Versión Desktop
+
+
 
 ## Comandos importantes de conocer:
 1. Git status 
-Sirve para revisar el estado del repositorio.
+Revisa qué archivos han cambiado y qué falta por guardar.
  ```bash
 git status
 ```
@@ -178,12 +180,84 @@ Sirve para ver las ramas que tengo en mi repositorio y en cuál estoy.
  ```bash
 git branch
 ```
-2. Git checkout "nombre_rama"
-Sirve para salir de una rama y cambiar a otra
+3. Git checkout 
+Crea una nueva rama y se cambia a ella automáticamente.
  ```bash
-git checkout "rama"
+git checkout -b nombre_de_rama
+```
+4. Git clone 	
+Descarga un proyecto completo de GitHub a tu PC.
+ ```bash
+git clone [url]
 ```
 
+4. Git pull 	
+Trae los cambios del remoto al repositorio local
+ ```bash
+git pull
+```
 
-# Creación de un Repositorio desde GitHub Desktop
+## Creación de un Repositorio desde GitHub Desktop
 
+### Creación de un Repositorio
+1. En la pestaña File podemos crear un nuevo repositorio
+<p align="center">
+  <img src="imagenes/14.png" alt="Conexión" width="600"/>
+</p>
+
+2. Asignamos un nombre y elegimos la dirección local de dónde crearemos el repositorio local
+<p align="center">
+  <img src="imagenes/15.png" alt="Conexión" width="600"/>
+</p>
+<p align="center">
+  <img src="imagenes/16.png" alt="Conexión" width="600"/>
+</p>
+
+3. Al crear el repositorio notemos que se crea una rama main y además nos pide publicar el repositorio, es decir, nuestro repositorio aún solo es local.
+<p align="center">
+  <img src="imagenes/17.png" alt="Conexión" width="600"/>
+</p>
+
+4. Al intentar publicar el repositorio necesitamos elegir el tipo de privacidad del repositorio, dependiendo de lo que necesitemos seleccionamos.
+<p align="center">
+  <img src="imagenes/18.png" alt="Conexión" width="600"/>
+</p>
+
+5. Podemos visualizar el repostiorio local simplemente presionando "view on GitHub"
+<p align="center">
+  <img src="imagenes/19.png" alt="Conexión" width="600"/>
+</p>
+
+6. Para hacer un commit a este repositorio visualizaremos los cambios el el dashboard.
+<p align="center">
+  <img src="imagenes/20.png" alt="Conexión" width="600"/>
+</p>
+
+7. Para hacer el commit nos dirigimos a la esquina inferior izquierda y llenamos los datos, notemos que incluso nos da sugerencias del nombre a asignar al commit y la descripción.
+<p align="center">
+  <img src="imagenes/21.png" alt="Conexión" width="600"/>
+</p>
+
+8. Al realizar el commit automáticamente nos pide realizar el push, para poder ver reflejado el cambio en el repositorio remoto.
+<p align="center">
+  <img src="imagenes/22.png" alt="Conexión" width="600"/>
+</p>
+
+9. Después de hacer el push, podemos ver los cambios reflejados en el repositorio remoto.
+<p align="center">
+  <img src="imagenes/23.png" alt="Conexión" width="600"/>
+</p>
+
+
+##  Flujo de Trabajo Resumido
+```
+Modificar archivos
+       ↓
+   git add .
+       ↓
+git commit -m "descripción"
+       ↓
+    git push
+       ↓
+Cambios reflejados en GitHub 
+```
