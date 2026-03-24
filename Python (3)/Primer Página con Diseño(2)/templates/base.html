@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %} Taller Desarrollo Web con Python - Bloque 1 {% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> # Enlaza el archivo CSS desde la carpeta /static
 </head>
-<body>
+<body> # Lo que veremos en la página, el bloque content se llenará con lo que pongamos en cada plantilla que herede de esta base.html
     <nav>
         <a href="/">Inicio</a> | <a href="/contacto">Dirección a contacto</a>
     </nav>
