@@ -1,0 +1,26 @@
+# Herencia, para que use base.html
+{% extends "base.html" %}
+
+# Bloque para el título de la página
+{% block title %} Inicio {% endblock %}
+
+# Bloque para el contenido específico de esta página
+{% block content %}
+    <h1>Bienvenido, {{ usuario.nombre }}</h1>
+    <p>Hoy es un gran día para programar en el laboratorio de {{ usuario.curso }}.</p>
+    
+    <hr>
+
+    <h3>Tareas pendientes:</h3>
+
+    # Loop para recorrer la lista de tareas que es la que se envía a python
+    <ul>
+        {% for tarea in lista_tareas %}
+            <li>{{ tarea }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+# NOTA
+# Las llaves dobles {{ }} se usan para mostrar el valor de una variable o expresión en la plantilla. En este caso, se muestran los valores de usuario.nombre y cada tarea en lista_tareas.
+# Las llaves con porcentaje {% %} se usan para estructuras de control, como bucles o condicionales. En este caso, se usa un bucle for para iterar sobre la lista de tareas y generar un elemento de lista <li> para cada tarea.

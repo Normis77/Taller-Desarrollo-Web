@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Taller Desarrollo Web con Python - Bloque 1 {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Inicio</a> | <a href="/contacto">Dirección a contacto</a>
+    </nav>
+    <hr>
+    
+    <main>
+        {% block content %} 
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p> Taller de Desarrollo Web</p>
+    </footer>
+</body>
+</html>

@@ -4,7 +4,7 @@ from flask import Flask
 app = Flask(__name__)
 
 # 2. Definimos la ruta principal
-# Esto significac que cuando alguien ingrese a /, se ejecutará la función hola_mundo
+# Esto significa que cuando alguien ingrese a /, se ejecutará la función hola_mundo
 @app.route('/')
 
 # 3. Creamos la función que se ejecutará cuando accedamos a la ruta principal
