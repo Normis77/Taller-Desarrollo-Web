@@ -53,11 +53,12 @@ Para permitir la conexión desde nuestra aplicación Flask, configuramos los acc
 * Confirma con **"Confirm"**.
 
 <p align="center">
-  <img src="imagenes/1.png" alt="Dirección de carpeta" width="600"/>
+  <img src="imagenes/1.png"  width="600"/>
 </p>
 <p align="center">
-  <img src="imagenes/2.png" alt="Dirección de carpeta" width="600"/>
+  <img src="imagenes/2.png"  width="600"/>
 </p>
+
 ### 3. Obtener la Llave de Conexión (Connection String)
 * Regresa a **Deployment** > **Database**.
 * Haz clic en el botón **"Connect"**.
@@ -67,7 +68,7 @@ Para permitir la conexión desde nuestra aplicación Flask, configuramos los acc
   `mongodb+srv://tu_usuario:<password>@tu_cluster.mongodb.net/?appName=LaboratorioDB`
 * **IMPORTANTE:** Reemplaza `<password>` por la contraseña real que creaste en el paso anterior.
 <p align="center">
-  <img src="imagenes/3.png" alt="Dirección de carpeta" width="600"/>
+  <img src="imagenes/3.png"  width="600"/>
 </p>
 ---
 
@@ -100,8 +101,8 @@ Ejecutamos con el comando
 ```
 ## VISUALIZACIÓN INTERFAZ
 <p align="center">
-  <img src="imagenes/4.png" alt="Dirección de carpeta" width="600"/>
+  <img src="imagenes/4.png"  width="600"/>
 </p>
 <p align="center">
-  <img src="imagenes/5.png" alt="Dirección de carpeta" width="600"/>
+  <img src="imagenes/5.png"  width="600"/>
 </p>
