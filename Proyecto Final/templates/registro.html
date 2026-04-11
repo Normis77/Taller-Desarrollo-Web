@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    
+    <section class="form-section dark">
+        <header class="form-header">
+            <h2 class="form-title">GESTIÓN DE INVENTARIO ELECTRÓNICO</h2>
+            <p class="form-subtitle">Ingreso de nuevos componentes al sistema de base de datos</p>
+        </header>
+
+        <form action="{{ url_for('agregar') }}" method="POST" class="structured-form">
+            
+            <fieldset class="form-group">
+                <legend>Identificación del Componente</legend>
+                <div class="input-field full">
+                    <label>Nombre del Dispositivo</label>
+                    <input type="text" name="nombre" required>
+                </div>
+                <div class="row-flex">
+                    <div class="input-field">
+                        <label>Categoría</label>
+                        <input type="text" name="categoria" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Subcategoría</label>
+                        <input type="text" name="subcategoria">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend>Control de Existencias</legend>
+                <div class="row-flex">
+                    <div class="input-field">
+                        <label>Stock Total (Unidades)</label>
+                        <input type="number" name="cantidad_total" min="0" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Unidades en Uso</label>
+                        <input type="number" name="en_uso" value="0" min="0">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend>Especificaciones y Multimedia</legend>
+                <div class="input-field">
+                    <label>Ficha Técnica / Specs (Separar por comas)</label>
+                    <input type="text" name="especificaciones">
+                </div>
+                <div class="row-flex">
+                    <div class="input-field">
+                        <label>Enlace de Imagen (URL)</label>
+                        <input type="text" name="imagen">
+                    </div>
+                    <div class="input-field">
+                        <label>Link del Datasheet (Opcional)</label>
+                        <input type="text" name="datasheet" >
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">REGISTRAR EN BASE DE DATOS</button>
+            </div>
+        </form>
+    </section>
+</div>
+{% endblock %}

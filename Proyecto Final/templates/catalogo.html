@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    
+    <nav class="filter-wrapper">
+        <form action="{{ url_for('catalogo') }}" method="GET" class="filter-form">
+            <label for="categoria">VER CATEGORÍA:</label>
+            <div class="select-styled">
+                <select name="categoria" onchange="this.form.submit()">
+                    <option value="Todas">MOSTRAR TODO EL INVENTARIO</option>
+                    {% for cat in categorias %}
+                        <option value="{{ cat }}" {% if seleccionada == cat %}selected{% endif %}>{{ cat | upper }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>
+    </nav>
+
+    <div class="grid-container">
+        {% for item in lista %}
+            <article class="tech-card">
+                <header class="card-labels">
+                    <span class="badge category">{{ item.categoria }}</span>
+                    {% if item.subcategoria %}
+                        <span class="badge subcategory">{{ item.subcategoria }}</span>
+                    {% endif %}
+                </header>
+                
+                <figure class="card-preview">
+                    <img src="{{ item.imagen }}" alt="{{ item.nombre }}" onerror="this.src='https://via.placeholder.com/400x250?text=Hardware+No+Imagen'">
+                </figure>
+                
+                <div class="card-content">
+                    <h3 class="item-title">{{ item.nombre }}</h3>
+                    
+                    {% if item.especificaciones %}
+                        <ul class="technical-list">
+                            {% for spec in item.especificaciones.split(',') %}
+                                <li>{{ spec.strip() }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% if item.datasheet %}
+                        <div style="margin-bottom: 15px;">
+                            <a href="{{ item.datasheet }}" target="_blank" class="btn-datasheet">
+                                VER DATASHEET
+                            </a>
+                        </div>
+                    {% endif %}
+
+                    <div class="inventory-status">
+                        <div class="status-pill total">
+                            <span class="label">STOCK</span>
+                            <span class="value">{{ item.cantidad_total }}</span>
+                        </div>
+                        <div class="status-pill available">
+                            <span class="label">DISPONIBLE</span>
+                            <span class="value">{{ item.disponibles }}</span>
+                        </div>
+                        <div class="status-pill usage">
+                            <span class="label">EN USO</span>
+                            <span class="value">{{ item.en_uso }}</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <form action="/editar/{{ item._id }}" method="POST" class="inline-edit">
+                            <div class="edit-field">
+                                <span class="edit-label">Total</span>
+                                <input type="number" name="cantidad_total" value="{{ item.cantidad_total }}">
+                            </div>
+                            <div class="edit-field">
+                                <span class="edit-label">Uso</span>
+                                <input type="number" name="en_uso" value="{{ item.en_uso }}">
+                            </div>
+                            <button type="submit" class="btn-ok">OK</button>
+                        </form>
+                        
+                        <a href="/eliminar/{{ item._id }}" class="btn-delete" onclick="return confirm('¿Seguro que desea eliminar el registro?')">
+                            ELIMINAR
+                        </a>
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
