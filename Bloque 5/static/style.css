@@ -1,14 +1,14 @@
 :root {
-    /* Paleta Institucional USAC - Limpia y de Alta Visibilidad */
-    --primary: #003566;       /* Azul Navy para el Navbar y Cabeceras */
-    --accent: #0077b6;        /* Azul brillante para elementos destacados */
-    --bg-light: #f8f9fa;      /* Fondo pálido para descanso visual */
-    --card-white: #ffffff;    /* Fondo de tarjetas */
-    --text-main: #2b2d42;     /* Texto principal */
-    --text-muted: #636e72;    /* Texto secundario */
-    --border: #dee2e6;        /* Bordes sutiles */
+
+    --primary: #003566;       
+    --accent: #0077b6;        
+    --bg-light: #f8f9fa;      
+    --card-white: #ffffff;    
+    --text-main: #2b2d42;     
+    --text-muted: #636e72;    
+    --border: #dee2e6;        
     
-    /* Colores de Estado Sólidos */
+    
     --total: #023e8a;
     --disponible: #2b9348;
     --uso: #d9480f;
@@ -63,7 +63,7 @@ nav strong {
 }
 
 .nav-links a:hover {
-    color: #90e0ef; /* Azul muy claro para el hover */
+    color: #90e0ef; 
     text-decoration: underline;
 }
 
@@ -362,6 +362,8 @@ footer {
     color: var(--text-muted);
     font-size: 0.85rem;
 }
+
+/* --- datasheet--- */
 .btn-datasheet {
     display: inline-block;
     background-color: #e3f2fd; /* Azul pálido */
